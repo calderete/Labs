@@ -26,14 +26,9 @@ def win_check(current_move_bank)
 	winner
 end
 def game_over(move_bank1, move_bank2)
-	#win_check(current_move_bank, winner)
 	turn_count = move_bank1.length + move_bank2.length
-	 if turn_count == 9
-	 	puts "Draw..."
-	 end 
+	 turn_count == 9 	 
 end
-
-#def game_win
 
 def postmortem(current_move_bank, winner)
 	if winner == true
