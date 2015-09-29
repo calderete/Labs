@@ -7,6 +7,5 @@ class HumanPlayer
 			guess = gets.chomp.to_i
 		end
 		guess
-	get_guess
 	end
 end
