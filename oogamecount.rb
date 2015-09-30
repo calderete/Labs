@@ -3,6 +3,7 @@ require "./humanplayer"
 require "./randomplayer"
 require "./countingplayer"
 require "./smartplayer"
+#require "./newsmartplayer.rb"
 
 class GuessingGame
   def initialize(player)
@@ -13,7 +14,7 @@ class GuessingGame
     #binding.pry
     number = rand(1..100)
     guess = @player.get_guess(number)
-    #result = nil
+    # => result = nil
     count = 1
     until guess == number
       if guess > number
