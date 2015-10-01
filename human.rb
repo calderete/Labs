@@ -1,9 +1,13 @@
+require './coffee'
+require 'pry'
+
 class Human
 
 	def initialize(name)
 		@name = name
 		@caffine = 0
 		@num_of_coffee = 0
+		@swigs = 0
 	end
 
 	def alertness
@@ -11,7 +15,7 @@ class Human
 	end
 
 	def has_coffee?
-		if @num_of_coffee = 0
+		if @num_of_coffee == 0
 			false
 		else
 			true
@@ -19,7 +23,7 @@ class Human
 	end
 
 	def needs_coffee?
-		if @num_of_coffee = 0
+		if @num_of_coffee == 0
 			true
 		else
 			false
@@ -29,12 +33,25 @@ class Human
 	def buy(coffee)
 		@coffee = coffee
 		@num_of_coffee += 1
+		@swigs = 0
 	end
 
 	def drink!
 		@caffine += 0.34
+		@swigs += 1
 		
+	end
+
+	def full_or_empty
+	binding.pry
+	swigs = @swigs
+		is_full = @coffee.cup_check(swigs)
 	end
 
 
 end
+
+
+
+
+
