@@ -7,7 +7,7 @@ class Human
 		@name = name
 		@caffine = 0
 		@num_of_coffee = 0
-		@swigs = 0
+		@coffee = nil
 	end
 
 	def alertness
@@ -37,9 +37,8 @@ class Human
 	end
 
 	def drink!
+		@coffee.slurp!
 		@caffine += 0.34
-		@swigs += 1
-		
 	end
 
 	def full_or_empty
