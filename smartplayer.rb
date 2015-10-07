@@ -1,20 +1,28 @@
 class SmartPlayer
+  def initialize
+    @min = prompt_for_min
+    @max = MAX
+  end
 
-	def initialize
-		@guess = 50
-	end
+  # Acceptable values are :low, :high, and nil
+  def get_guess(last_result)
+    if last_result == :low
+      @min = @guess
+      @guess = (@min + @max) / 2
+    elsif last_result == :high
+      @max = @guess
+      @guess = (@min + @max) / 2
+    else
+      @guess = 50
+    end
+  end
 
-	def get_guess(number)
-		binding.pry
-		x = number 
-		if @guess > number
-			@guess = @guess / 2
-		elsif @guess < number
-			@guess = @guess / 2 + @guess
-		else
-			puts "Number Found" 
-		end
-		@guess   
-	end
+  #private
+  def prompt_for_min
+    puts "Hey pal, what's your min? (you should probably pick 1)"
+    gets.chomp.to_i
+  end
 end
+
+
 
